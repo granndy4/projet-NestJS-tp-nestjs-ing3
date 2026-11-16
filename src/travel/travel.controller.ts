@@ -7,9 +7,9 @@ import { UpdateTravelDto } from './dto/update-travel.dto.js';
 export class TravelController {
   constructor(private readonly travelService: TravelService) {}
 
-  @Post()
-  create(@Body() createTravelDto: CreateTravelDto) {
-    return this.travelService.create(createTravelDto);
+  
+  create(): string {
+    return 'Planifier un nouveau voyage ici';
   }
 
   @Get()
@@ -21,14 +21,6 @@ export class TravelController {
   findOne(@Param('id') id: string) {
     return this.travelService.findOne(+id);
   }
-
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateTravelDto: UpdateTravelDto) {
-    return this.travelService.update(+id, updateTravelDto);
-  }
-
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.travelService.remove(+id);
-  }
 }
+
+  
